@@ -24,11 +24,11 @@ def count_down(count):
     global total_studied
     def studying_text(count):
         if count%3==2:
-            status.config(text='Studing.')
+            status.config(text='Studying.')
         elif count%3 == 1:
-            status.config(text='Studing..')
+            status.config(text='Studying..')
         elif count%3 == 0:
-            status.config(text='Studing...')
+            status.config(text='Studying...')
     def send_total(tracker):
         temp = tracker.split('#')
         total = int(temp[1])
@@ -51,6 +51,7 @@ def show_total():
     global total_studied
     total_out.config(text= total_studied)
 
+clock_font = ('Helvetica',60, "bold")
 my_font1 = ('Helvetica',20, "bold")
 my_font2 = ('Brush Script Std', 25, "normal")
 my_font3 = ('Brush Script Std', 17, "normal")
@@ -75,10 +76,10 @@ window.config(padx=10,pady=10, bg=pick_bg)
 title_lable = tkinter.Label(text="Study-Timer", fg='RoyalBlue4',bg=pick_bg , font=my_font2, highlightthickness=0)
 title_lable.grid(column=1, row=0)
 
-canvas = tkinter.Canvas(width=200, height=200, bg=pick_bg, highlightthickness=0)
-pick_image = tkinter.PhotoImage(file='deer.png')
-clock_image = canvas.create_image(100,100, image= pick_image)
-timer_text = canvas.create_text(100,68, text='00\n00', font=my_font1, fill='black')
+canvas = tkinter.Canvas(width=398, height=398, bg=pick_bg, highlightthickness=0)
+pick_image = tkinter.PhotoImage(file='clock1.png')
+clock_image = canvas.create_image(199,199, image= pick_image)
+timer_text = canvas.create_text(199,199, text='00\n00', font=clock_font, fill='sky blue')
 canvas.grid(column=1, row=2)
 
 start_button = tkinter.Button(text="Start", font=my_font3, fg = 'RoyalBlue4', bg = pick_bg
