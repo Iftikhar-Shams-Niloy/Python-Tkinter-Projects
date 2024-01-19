@@ -48,7 +48,6 @@ def flipCard():
 
 def isLearned():
     data_dict.remove(picked_card)
-    print(len(data_dict))
     save_data = pandas.DataFrame(data_dict)
     save_data.to_csv('dataset/leftToLearn')
     nextCard()
